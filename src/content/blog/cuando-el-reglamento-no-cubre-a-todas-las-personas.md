@@ -15,9 +15,9 @@ draft: true
 
 En junio de 2026, en la sesión de un concejo municipal chileno, un concejal con discapacidad visual debía exponer los acuerdos de una comisión. Como no podía leer documentos impresos, había coordinado con otro concejal para que leyera el informe en su lugar.
 
-Durante la sesión, un integrante del concejo pidió que el informe lo leyera el propio concejal, porque así lo establece el reglamento. Otro integrante recordó que él no puede leer. La discusión continuó, el concejal se retiró de la sala y la sesión se suspendió por algunos minutos. Al día siguiente hubo disculpas públicas.
+Durante la sesión, un integrante del concejo pidió que el informe lo leyera el propio concejal, porque así lo establece el reglamento. Otro integrante recordó que él no podía leer. La discusión continuó, el concejal se retiró de la sala y la sesión se suspendió por algunos minutos. Al día siguiente hubo disculpas públicas.
 
-El concejal ya había resuelto cómo participar. Lo que faltaba era una regla que respaldara esa solución.(Esta observación se hace cargo del aspecto formal de la situación, no del humano y ético.)
+El concejal ya había resuelto cómo participar. Lo que faltaba era una regla que respaldara esa solución. (Esta observación se hace cargo del aspecto formal de la situación, no de su dimensión humana y ética.)
 
 ## Cómo debió resolverse
 
@@ -45,7 +45,9 @@ El concejal ya había resuelto cómo participar. Lo que faltaba era una regla qu
 
 Un concejal representa a quienes lo eligieron. Cuando accede a la información de su cargo en igualdad de condiciones, esa representación funciona plenamente.
 
-Las herramientas para lograrlo ya existen en la normativa chilena. Llevarlas a la práctica en los concejos depende de documentos preparados, reglas escritas y equipos capacitados. Lo qué nos lleva a las siguientes preguntas...¿Existen equipos técnicos capacitados? ¿Sobré quién recae esa responsabilidad? ¿O depende de la voluntad política en cada caso? ¿Cómo hacemos que la normativa se cumpla para no llegar a estas instancias?
+Las herramientas para lograrlo ya existen en la normativa chilena. Llevarlas a la práctica en los concejos depende de documentos preparados, reglas escritas y equipos capacitados.
+
+Esto nos lleva a las siguientes preguntas: ¿existen equipos técnicos capacitados? ¿Sobre quién recae esa responsabilidad? ¿O depende de la voluntad política en cada caso? ¿Cómo hacemos que la normativa se cumpla para no llegar a estas instancias?
 
 ---
 
