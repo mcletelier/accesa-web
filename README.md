@@ -38,7 +38,7 @@ Reglas que valida el sitio al publicar:
 - Framework preset: **Astro**
 - Comando de build: `npm run build`
 - Directorio de salida: `dist`
-- Variable de entorno: `NODE_VERSION` = `22.12.0`
+- Variable de entorno: `NODE_VERSION` = `22.22.0`
 
 ## Formulario de contacto
 
