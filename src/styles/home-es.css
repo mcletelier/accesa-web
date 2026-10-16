@@ -1018,3 +1018,27 @@ nav.scrolled .lang-switch:hover {
 .form-status--ok { border-color: #6fcf8e; background: rgba(74,124,89,0.25); }
 .form-status--error { border-color: var(--acento); background: rgba(232,160,48,0.12); }
 .contacto-form { position: relative; }
+
+/* ── BOTÓN AL AUDITOR (hero) ── */
+.hero-actions { flex-wrap: wrap; }
+.btn-auditor {
+  background: var(--acento);
+  color: var(--noche);
+  padding: 0.85rem 1.8rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-auditor:hover { background: var(--crema); transform: translateY(-2px); }
+.btn-auditor .btn-note { text-transform: none; font-weight: 400; letter-spacing: 0.02em; }
+@media (max-width: 768px) {
+  .btn-auditor { text-align: center; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-auditor:hover { transform: none; }
+}
