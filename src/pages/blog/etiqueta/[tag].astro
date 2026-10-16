@@ -1,0 +1,47 @@
+---
+import Base from '../../../layouts/Base.astro';
+import BlogHeader from '../../../components/BlogHeader.astro';
+import BlogFooter from '../../../components/BlogFooter.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { getPublishedPosts, tagSlug, type Post } from '../../../lib/blog';
+import '../../../styles/blog.css';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  const byTag = new Map<string, { name: string; posts: Post[] }>();
+  for (const post of posts) {
+    for (const name of post.data.tags) {
+      const slug = tagSlug(name);
+      if (!byTag.has(slug)) byTag.set(slug, { name, posts: [] });
+      byTag.get(slug)!.posts.push(post);
+    }
+  }
+  return [...byTag].map(([tag, { name, posts }]) => ({ params: { tag }, props: { name, posts } }));
+}
+
+const { name, posts } = Astro.props as { name: string; posts: Post[] };
+const { tag } = Astro.params;
+---
+<Base lang="es" title={`${name} — Blog de Accesa`} description={`Artículos de Accesa sobre ${name}.`} path={`/blog/etiqueta/${tag}/`}>
+<BlogHeader current="blog" />
+<main id="main-content">
+  <div class="b-hero">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li aria-current="page">{name}</li>
+      </ol>
+    </nav>
+    <p class="b-eyebrow">Tema</p>
+    <h1 class="b-title">{name}</h1>
+    <p class="b-intro">{posts.length} {posts.length === 1 ? 'artículo' : 'artículos'} sobre este tema.</p>
+  </div>
+  <div class="b-wrap">
+    <ol class="post-list" role="list">
+      {posts.map((post) => <li><PostCard post={post} /></li>)}
+    </ol>
+  </div>
+</main>
+<BlogFooter />
+</Base>

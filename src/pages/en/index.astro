@@ -1,0 +1,403 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/home-en.css';
+---
+<Base lang="en" title="Accesa — Accessibility Agency" description="Accesa is a Chilean agency specialized in digital accessibility and inclusion. WCAG 2.2 audits, consulting, inclusive design and training." path="/en/" alternates={{ es: '/', en: '/en/' }}>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Cursor -->
+<div id="cursor"></div>
+
+<!-- Enlace a declaración de accesibilidad -->
+<a href="/en/accessibility/" id="a11yBtn" aria-label="View Accesa WCAG 2.2 AA accessibility statement">
+  <span class="a11y-dot"></span>
+  <span>Declaración de Accesibilidad</span>
+</a>
+
+<header role="banner">
+<!-- ═══ NAV ═══ -->
+<nav id="nav" aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="Accesa — home">
+    <svg class="nav-sym nav-sym-light" viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+      <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
+      <path d="M20 42 L30 16 L40 42" fill="none" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+    </svg>
+    <svg class="nav-sym nav-sym-dark" viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+      <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
+      <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+    </svg>
+    <span class="nav-wordmark">accesa</span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#servicios">Services</a></li>
+    <li><a href="#nosotras">About</a></li>
+    <li><a href="#proceso">Process</a></li>
+    <li><a href="#contacto" class="nav-cta">Let's talk</a></li>
+  </ul>
+  <a href="/" class="lang-switch lang-active" aria-label="Cambiar a versión en español" lang="es" hreflang="es">ES</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENÚ MÓVIL -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <button class="mobile-close" id="mobile-close" aria-label="Close menu">&#10005;</button>
+  <a href="#servicios"  id="ml-servicios">Services</a>
+  <a href="#nosotras"   id="ml-nosotras">About</a>
+  <a href="#proceso"    id="ml-proceso">Process</a>
+  <a href="/en/accessibility/">Accessibility</a>
+  <a href="#contacto" class="cta">Let's talk</a>
+  <a href="/" class="mobile-lang" aria-label="Cambiar a versión en español" lang="es" hreflang="es">ES — Español</a>
+</div>
+
+</header>
+<main id="main-content">
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="inicio">
+  <div class="hero-circle c1"></div>
+  <div class="hero-circle c2"></div>
+  <div class="hero-circle c3"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Accessibility Agency · Santiago, Chile</div>
+    <h1 class="hero-title">We design<br>for <em>everyone.</em></h1>
+    <p class="hero-sub">Accesa is an agency specialized in digital accessibility and inclusion. We remove barriers so no one is left out — regardless of how they see, hear, or interact with the world.</p>
+    <div class="hero-actions">
+      <a href="#servicios" class="btn-primary">Our services</a>
+      <a href="#contacto" class="btn-outline">Let's talk</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+      <svg class="ring-svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <defs>
+          <path id="ring-path" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"/>
+        </defs>
+        <circle cx="100" cy="100" r="75" fill="none" stroke="rgba(196,82,42,0.22)" stroke-width="1"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <text font-family="Space Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.28)" letter-spacing="5">
+          <textPath href="#ring-path">ACCESIBILIDAD · INCLUSION · UNIVERSALIDAD · CHILE · LATAM · </textPath>
+        </text>
+      </svg>
+      <svg class="center-sym" viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+        <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(196,82,42,0.55)" stroke-width="2.5"/>
+        <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+      </svg>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">WCAG 2.2</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Auditoría de accesibilidad</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Diseño inclusivo</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Capacitación</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Sector público</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Sector privado</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Chile · Latam</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Tecnología asistiva</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">UX universal</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">WCAG 2.2</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Auditoría de accesibilidad</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Diseño inclusivo</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Capacitación</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Sector público</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Sector privado</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Chile · Latam</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Tecnología asistiva</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">UX universal</span><span class="ticker-sep">·</span>
+  </div>
+</div>
+
+<!-- ═══ SERVICIOS ═══ -->
+<section id="servicios" aria-labelledby="titulo-servicios">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal">01 — Services</div>
+    <div class="servicios-header">
+      <h2 id="titulo-servicios" class="servicios-title reveal">What we do</h2>
+      <p class="servicios-intro reveal">We offer a complete suite of accessibility services so your organization not only meets the standard — but leads inclusion in your industry.</p>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card reveal">
+        <div class="servicio-num">01</div>
+        <svg class="servicio-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect x="4" y="4" width="32" height="32" rx="2" fill="none" stroke="#C4522A" stroke-width="1.5"/>
+          <path d="M10 20 L18 28 L30 12" stroke="#C4522A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="servicio-title">Accessibility Audit</div>
+        <p class="servicio-desc">We evaluate your website, app or digital platform against WCAG 2.2 standards. We deliver a clear report with prioritized findings and an action plan.</p>
+        <div class="servicio-tags"><span class="tag">WCAG 2.2</span><span class="tag">VPAT</span><span class="tag">Informe</span></div>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="servicio-num">02</div>
+        <svg class="servicio-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="14" fill="none" stroke="#C4522A" stroke-width="1.5"/>
+          <circle cx="20" cy="14" r="3" fill="#C4522A"/>
+          <path d="M14 28 Q14 22 20 22 Q26 22 26 28" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="servicio-title">Strategic Consulting</div>
+        <p class="servicio-desc">We guide your team in designing and implementing a sustainable accessibility strategy. From internal policy to technical roadmap.</p>
+        <div class="servicio-tags"><span class="tag">Estrategia</span><span class="tag">Roadmap</span><span class="tag">Policy</span></div>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="servicio-num">03</div>
+        <svg class="servicio-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <path d="M8 32 L8 16 L20 8 L32 16 L32 32 Z" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linejoin="round"/>
+          <rect x="15" y="22" width="10" height="10" fill="none" stroke="#C4522A" stroke-width="1.5"/>
+        </svg>
+        <div class="servicio-title">Inclusive Design</div>
+        <p class="servicio-desc">We integrate accessibility from the very beginning of the design process. We review wireframes, prototypes and design systems to ensure inclusion from day one.</p>
+        <div class="servicio-tags"><span class="tag">UX</span><span class="tag">Design System</span><span class="tag">Figma</span></div>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="servicio-num">04</div>
+        <svg class="servicio-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect x="6" y="10" width="28" height="20" rx="2" fill="none" stroke="#C4522A" stroke-width="1.5"/>
+          <path d="M6 16 L34 16" stroke="#C4522A" stroke-width="1.5"/>
+          <circle cx="12" cy="13" r="1.5" fill="#C4522A"/>
+          <circle cx="18" cy="13" r="1.5" fill="#C4522A"/>
+        </svg>
+        <div class="servicio-title">Training</div>
+        <p class="servicio-desc">Workshops and training for design, development and product teams. We build an accessibility culture from within so change lasts.</p>
+        <div class="servicio-tags"><span class="tag">Workshops</span><span class="tag">E-learning</span><span class="tag">Equipos</span></div>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="servicio-num">05</div>
+        <svg class="servicio-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <path d="M10 30 L10 22 L16 18 L22 22 L22 30" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M22 30 L22 20 L28 14 L34 20 L34 30" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M6 30 L34 30" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="servicio-title">Continuous Monitoring</div>
+        <p class="servicio-desc">Accessibility is not a checkbox — it is a process. We offer periodic monitoring so your platform maintains its standards with every update.</p>
+        <div class="servicio-tags"><span class="tag">Monthly report</span><span class="tag">Alertas</span><span class="tag">Dashboard</span></div>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="servicio-num">06</div>
+        <svg class="servicio-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="14" fill="none" stroke="#C4522A" stroke-width="1.5"/>
+          <path d="M12 20 Q12 14 20 14 Q28 14 28 20 Q28 26 20 26" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M16 24 L12 28" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="servicio-title">User Testing</div>
+        <p class="servicio-desc">Testing sessions with people with disabilities — real assistive technology users. Nothing replaces the perspective of those who use your product every day.</p>
+        <div class="servicio-tags"><span class="tag">Real testing</span><span class="tag">Screen readers</span><span class="tag">Insights</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NUMEROS ═══ -->
+<div class="numeros reveal">
+  <div class="numeros-grid">
+    <div class="numero-item">
+      <div class="numero-val">1 de 4</div>
+      <div class="numero-label">Personas en el mundo<br>vive con alguna discapacidad</div>
+    </div>
+    <div class="numero-item">
+      <div class="numero-val">96%</div>
+      <div class="numero-label">Sitios web presentan<br>errores de accesibilidad</div>
+    </div>
+    <div class="numero-item">
+      <div class="numero-val">+28%</div>
+      <div class="numero-label">Ingresos adicionales en<br>empresas inclusivas</div>
+    </div>
+    <div class="numero-item">
+      <div class="numero-val">10+</div>
+      <div class="numero-label">Países en Latam con<br>normativa de accesibilidad</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ NOSOTRAS ═══ -->
+<section id="nosotras" aria-labelledby="titulo-nosotras">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal">02 — About us</div>
+    <div class="nosotras-grid">
+      <div class="nosotras-visual reveal">
+        <div class="nosotras-block">
+          <svg class="nosotras-sym" viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+            <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="2.5"/>
+            <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+          </svg>
+        </div>
+        <div class="nosotras-accent">Fundada<br>en Chile.<br>Con Latam<br>en la mente.</div>
+      </div>
+      <div class="reveal">
+        <h2 id="titulo-nosotras" class="nosotras-title">A <em>Chilean</em> agency with a global vision</h2>
+        <div class="nosotras-body">
+          <p>Accesa nació de la convicción de que el diseño inclusivo no es un lujo ni un extra — es el punto de partida correcto. Somos una agencia con base en Santiago, vocación latinoaméricana y estándares internacionales.</p>
+          <p>We believe that when we design for people who face the most barriers, we design better for everyone. Not as a statement — as a methodology. Every project we support starts with listening, co-creating and measuring real results.</p>
+        </div>
+        <div class="nosotras-valores">
+          <div class="valor-row"><div class="valor-dot"></div><div class="valor-text"><strong>Human</strong> — We put people at the center of every design decision.</div></div>
+          <div class="valor-row"><div class="valor-dot"></div><div class="valor-text"><strong>Rigorous</strong> — We work with international WCAG standards and proven methodology.</div></div>
+          <div class="valor-row"><div class="valor-dot"></div><div class="valor-text"><strong>Collaborative</strong> — We listen before we propose. We build with your team, not for them.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MANIFIESTO ═══ -->
+<section id="manifiesto">
+  <div class="manifiesto-inner">
+    <div class="manifiesto-vertical">Accesa Manifesto 2024</div>
+    <div class="reveal">
+      <div class="manifiesto-quote">"Inclusive design is not <em>optional.</em> It is simply better design."</div>
+      <div class="manifiesto-body">
+        <p>When we design thinking about those who face the most barriers — who use a screen reader, who navigates by keyboard, who has low vision — the result is a better product for absolutely everyone.</p>
+        <p>Eso no es filantropía. Es estrategia. Las organizaciónes que lideran en accesibilidad amplían su mercado, reducen su riesgo legal y construyen productos más robustos. Accesa existe para acompañar ese camino.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESO ═══ -->
+<section id="proceso" aria-labelledby="titulo-proceso">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal">03 — Process</div>
+    <h2 id="titulo-proceso" class="servicios-title reveal" style="margin-bottom:2.5rem;">How we work</h2>
+    <div class="proceso-steps">
+      <div class="paso reveal"><div class="paso-num">01</div><div class="paso-title">Diagnosis</div><p class="paso-desc">We listen to your context, review your platform and assess the current state of accessibility.</p><div class="paso-arrow">&#8594;</div></div>
+      <div class="paso reveal"><div class="paso-num">02</div><div class="paso-title">Proposal</div><p class="paso-desc">We design a tailored plan: scope, timelines and clear metrics from the start.</p><div class="paso-arrow">&#8594;</div></div>
+      <div class="paso reveal"><div class="paso-num">03</div><div class="paso-title">Implementation</div><p class="paso-desc">We execute together with your team. We audit, train and support remediation.</p><div class="paso-arrow">&#8594;</div></div>
+      <div class="paso reveal"><div class="paso-num">04</div><div class="paso-title">Follow-up</div><p class="paso-desc">Accessibility is ongoing. We give you tools to keep it alive over time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACTO ═══ -->
+<section id="contacto" aria-labelledby="titulo-contacto">
+  <div class="contacto-inner">
+    <div class="reveal">
+      <h2 id="titulo-contacto" class="contacto-title">Let's talk about your <em>project</em></h2>
+      <p class="contacto-sub">Tell us what you are working on. No commitment — just a conversation about how we can make your product more accessible for everyone.</p>
+      <div class="contacto-info">
+        <div class="info-row"><span class="info-label">Email</span><span class="info-val">hola@accesa.agency</span></div>
+        <div class="info-row"><span class="info-label">Based</span><span class="info-val">Santiago, Chile</span></div>
+        <div class="info-row"><span class="info-label">Coverage</span><span class="info-val">Chile · Latin America · International</span></div>
+        <div class="info-row"><span class="info-label">LinkedIn</span><span class="info-val">linkedin.com/company/accesa</span></div>
+      </div>
+    </div>
+    <div class="contacto-form reveal" role="form" aria-labelledby="titulo-contacto">
+      <div class="form-group"><label class="form-label" for="f-nombre">Your name</label><input id="f-nombre" type="text" class="form-input" placeholder="Maria González" autocomplete="name"></div>
+      <div class="form-group"><label class="form-label" for="f-org">Organization</label><input id="f-org" type="text" class="form-input" placeholder="Company or institution" autocomplete="organization"></div>
+      <div class="form-group"><label class="form-label" for="f-email">Email</label><input id="f-email" type="email" class="form-input" placeholder="maria@empresa.cl" autocomplete="email"></div>
+      <div class="form-group">
+        <label class="form-label" for="f-servicio">What do you need</label>
+        <select id="f-servicio" class="form-select">
+          <option value="">Select a service</option>
+          <option>Accessibility audit</option>
+          <option>Strategic consulting</option>
+          <option>Inclusive design</option>
+          <option>Training</option>
+          <option>Continuous monitoring</option>
+          <option>I'm not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label" for="f-mensaje">Tell us more</label><textarea id="f-mensaje" class="form-textarea" placeholder="Briefly describe your project or challenge..."></textarea></div>
+      <button type="submit" class="form-submit">Send message &#8594;</button>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <a href="#" class="footer-logo" aria-label="Accesa — home">
+    <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+      <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
+      <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+    </svg>
+    <span class="footer-wordmark">accesa</span>
+  </a>
+  <ul class="footer-links" role="list" aria-label="Footer links">
+    <li><a href="#servicios">Services</a></li>
+    <li><a href="#nosotras">About</a></li>
+    <li><a href="#proceso">Process</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="/en/accessibility/" style="color:var(--verde) !important;">Accessibility</a></li>
+  </ul>
+  <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.4rem;">
+    <a href="/en/accessibility/" style="font-family:'Space Mono',monospace; font-size:0.78rem; letter-spacing:0.06em; font-weight:700; color:#6fcf8e; border:2px solid rgba(111,207,142,0.5); padding:0.45rem 1rem; text-decoration:none; display:inline-block;" aria-label="This site complies with WCAG 2.2 AA — view accessibility statement">WCAG 2.2 AA ✓</a>
+    <span class="footer-copy">© 2026 Accesa · Santiago, Chile</span>
+  </div>
+</footer>
+
+<script is:inline>
+// Cursor manejado por CSS puro — sin JS, sin repaints
+
+// ── NAV ──
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// ── REVEAL ──
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry, i) {
+    if (entry.isIntersecting) {
+      setTimeout(function() {
+        entry.target.classList.add('visible');
+      }, i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(function(el) {
+  observer.observe(el);
+});
+
+// Enlace accesibilidad — navega a declaración de accesibilidad
+
+// ── MENÚ MÓVIL ──
+var hamburger   = document.getElementById('hamburger');
+var mobileMenu  = document.getElementById('mobile-menu');
+var mobileClose = document.getElementById('mobile-close');
+
+function openMenu() {
+  mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+  mobileClose.focus();
+}
+
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+  hamburger.focus();
+}
+
+hamburger.addEventListener('click', openMenu);
+mobileClose.addEventListener('click', closeMenu);
+
+// Cerrar al hacer click en un link
+mobileMenu.querySelectorAll('a').forEach(function(a) {
+  a.addEventListener('click', closeMenu);
+});
+
+// Cerrar con ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+});
+</script>
+</Base>

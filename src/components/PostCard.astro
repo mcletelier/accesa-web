@@ -1,0 +1,18 @@
+---
+import { formatDate, isoDate, tagSlug, type Post } from '../lib/blog';
+interface Props { post: Post; headingLevel?: 2 | 3 }
+const { post, headingLevel = 2 } = Astro.props;
+const H = `h${headingLevel}` as 'h2' | 'h3';
+const { title, description, date, tags } = post.data;
+const href = `/blog/${post.id}/`;
+---
+<article class="post-card">
+  <p class="post-card-date"><time datetime={isoDate(date)}>{formatDate(date)}</time></p>
+  <H class="post-card-title"><a href={href}>{title}</a></H>
+  <p class="post-card-desc">{description}</p>
+  {tags.length > 0 && (
+    <ul class="tag-list" role="list" aria-label="Etiquetas">
+      {tags.map((t) => <li><a class="tag-link" href={`/blog/etiqueta/${tagSlug(t)}/`}>{t}</a></li>)}
+    </ul>
+  )}
+</article>

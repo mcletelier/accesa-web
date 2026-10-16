@@ -1,0 +1,23 @@
+---
+/** Encabezado de las páginas del blog (mismo estilo que la Declaración de Accesibilidad) */
+interface Props { current?: 'blog' | 'post' }
+const { current } = Astro.props;
+---
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header>
+<nav class="b-nav" aria-label="Navegación principal">
+  <a href="/" class="b-nav-logo" aria-label="Accesa — inicio">
+    <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+      <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
+      <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+    </svg>
+    <span class="b-nav-wordmark">accesa</span>
+  </a>
+  <ul class="b-nav-links" role="list">
+    <li><a href="/#servicios">Servicios</a></li>
+    <li><a href="/blog/" aria-current={current === 'blog' ? 'page' : undefined}>Blog</a></li>
+    <li><a href="/#contacto" class="b-nav-cta">Conversemos</a></li>
+  </ul>
+</nav>
+</header>

@@ -1,0 +1,461 @@
+---
+import Base from '../../../layouts/Base.astro';
+import '../../../styles/declaracion.css';
+---
+<Base lang="en" title="Accessibility Statement — Accesa" description="Accesa accessibility statement. This site complies with WCAG 2.2 level AA. Learn about our commitment, how to use it with assistive technology and how to report barriers." path="/en/accessibility/" alternates={{ es: '/accesibilidad/', en: '/en/accessibility/' }}>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ═══ NAV ═══ -->
+<header role="banner">
+<nav aria-label="Main navigation">
+  <a href="/en/" class="nav-logo" aria-label="Accesa — back to home">
+    <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+      <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
+      <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+    </svg>
+    <span class="nav-wordmark">accesa</span>
+  </a>
+  <a href="/en/" class="nav-back" aria-label="Volver al sitio principal">
+    ← Volver al sitio
+  </a>
+</nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<div class="page-hero" role="region" aria-label="Encabezado de declaración de accesibilidad">
+  <div class="hero-badge" role="status" aria-label="Estado de conformidad: Totalmente conforme con WCAG 2.2 AA">
+    <span class="badge-dot" aria-hidden="true"></span>
+    <span class="badge-text">WCAG 2.2 AA — Fully conformant</span>
+  </div>
+  <h1 class="page-title">Accessibility <em>Statement</em></h1>
+  <p class="page-intro">This site is designed to be used by everyone, regardless of how they see, hear, navigate or process information. Here we explain how we achieved this and how you can let us know if something does not work.</p>
+  <div class="page-meta">
+    <div class="meta-item">
+      <span class="meta-label">Standard</span>
+      <span class="meta-val">WCAG 2.2</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Level</span>
+      <span class="meta-val">AA</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Status</span>
+      <span class="meta-val conforme">Fully conformant</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Last audit</span>
+      <span class="meta-val">Mayo 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Next review</span>
+      <span class="meta-val">Agosto 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TABS ═══ -->
+<div class="audience-tabs" role="tablist" aria-label="Select your profile to see relevant information">
+  <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="panel-comunidad" id="tab-comunidad"><span class="tab-long">For the community</span><span class="tab-short">Community</span></button>
+  <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="panel-clientes"  id="tab-clientes"><span class="tab-long">For organizations</span><span class="tab-short">Organizations</span></button>
+  <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="panel-tecnicos"  id="tab-tecnicos"><span class="tab-long">Technical info</span><span class="tab-short">Technical</span></button>
+</div>
+
+<!-- ═══ CUERPO ═══ -->
+<main id="main-content">
+<div class="page-body">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" aria-label="Section index">
+    <div class="sidebar-title" id="sidebar-label">En esta página</div>
+    <ul class="sidebar-nav" aria-labelledby="sidebar-label" id="sidebar-links">
+      <!-- Se actualiza por JS según el tab activo -->
+    </ul>
+    <div class="sidebar-divider"></div>
+    <div style="font-family:'Libre Baskerville',serif; font-size:0.78rem; color:var(--gris); line-height:1.9;">
+      <strong style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--noche); display:block; margin-bottom:0.4rem;">Need help?</strong>
+      <a href="mailto:accesibilidad@accesa.agency" style="color:var(--tierra); text-decoration:underline; text-underline-offset:3px; word-break:break-all; display:block;">accesibilidad@accesa.agency</a>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+
+    <!-- ══ PANEL COMUNIDAD ══ -->
+    <div id="panel-comunidad" class="audience-panel active" role="tabpanel" aria-labelledby="tab-comunidad">
+
+      <section class="content-section" id="com-compromiso">
+        <div class="section-tag">Our commitment</div>
+        <h2 class="section-title">This site was designed for everyone</h2>
+        <div class="section-body">
+          <p>At Accesa we believe that access to information is a right. That is why this site uses no shortcuts or patches — it was built from scratch to work with any assistive technology, on any device.</p>
+          <p>You do not need to do anything special to use it. There are no "accessible version" buttons or alternative modes. The entire site is the accessible version.</p>
+        </div>
+
+        <div class="status-card" role="note" aria-label="Conformity status">
+          <div class="status-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="#4A7C59" stroke-width="1.5"/>
+              <path d="M7 12.5 L10.5 16 L17 9" stroke="#4A7C59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="status-label">Current status</div>
+            <div class="status-text">Fully conformant with WCAG 2.2 level AA</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="com-tecnologias">
+        <div class="section-tag">How to use it</div>
+        <h2 class="section-title">Works with your assistive technology</h2>
+        <div class="section-body">
+          <p>This site was tested and works correctly with the following technologies:</p>
+        </div>
+        <ul class="check-list" aria-label="Compatible assistive technologies">
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(74,124,89,0.15)" stroke="#4A7C59" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#4A7C59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Screen readers</strong> — NVDA, JAWS, VoiceOver (macOS and iOS), TalkBack (Android)</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(74,124,89,0.15)" stroke="#4A7C59" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#4A7C59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Keyboard navigation</strong> — the entire site is operable without a mouse</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(74,124,89,0.15)" stroke="#4A7C59" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#4A7C59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Voice recognition software</strong> — Dragon NaturallySpeaking and Voice Control</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(74,124,89,0.15)" stroke="#4A7C59" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#4A7C59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Screen magnification</strong> — up to 400% without loss of content or functionality</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(74,124,89,0.15)" stroke="#4A7C59" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#4A7C59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Reduced motion mode</strong> — if your system has this preference enabled, animations stop automatically</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(74,124,89,0.15)" stroke="#4A7C59" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#4A7C59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Manual accessible mode</strong> — available via the "Accessible mode" button in the bottom right corner of the site</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="com-barreras">
+        <div class="section-tag">Report a barrier</div>
+        <h2 class="section-title">Did you find something that does not work?</h2>
+        <div class="section-body">
+          <p>If you find an accessibility barrier — something you cannot read, hear, navigate or understand — we want to know. Your report helps us improve and can also help others.</p>
+          <p>We commit to responding within a maximum of <strong>5 business days</strong> and resolving the issue or proposing an alternative within <strong>15 business days</strong>.</p>
+        </div>
+        <div class="contact-block">
+          <div class="contact-block-title">Write to us directly</div>
+          <p class="contact-block-body">Tell us what you found, on which page it occurs and what technology you are using. With that information we can reproduce and fix the issue.</p>
+          <a href="mailto:accesibilidad@accesa.agency" class="contact-block-email">accesibilidad@accesa.agency</a>
+        </div>
+      </section>
+
+    </div><!-- /panel-comunidad -->
+
+    <!-- ══ PANEL ORGANIZACIONES ══ -->
+    <div id="panel-clientes" class="audience-panel" role="tabpanel" aria-labelledby="tab-clientes">
+
+      <section class="content-section" id="org-valor">
+        <div class="section-tag">Why it matters</div>
+        <h2 class="section-title">Accessibility is strategy, not just compliance</h2>
+        <div class="section-body">
+          <p>1 in 4 people in the world lives with some disability. In Chile, that represents more than 2.8 million people. An inaccessible site or product not only excludes those people — it also exposes your organization to growing legal and reputational risks.</p>
+          <p>Organizations that lead in accessibility expand their market, improve the experience for all their users, reduce their legal risk and demonstrate a real commitment to inclusion.</p>
+        </div>
+        <div class="callout">
+          <div class="callout-title">Regulatory context in Chile and Latam</div>
+          <p class="callout-body">Chile has Law 20.422 establishing rules on equal opportunities and inclusion of people with disabilities. Regionally, more than 10 Latin American countries have regulations requiring digital accessibility in the public sector, and the trend is expanding to the private sector.</p>
+        </div>
+      </section>
+
+      <section class="content-section" id="org-servicios">
+        <div class="section-tag">What we do</div>
+        <h2 class="section-title">How Accesa can help your organization</h2>
+        <div class="section-body">
+          <p>This very site you are reading is our best presentation. It was built to comply with WCAG 2.2 AA from the code — no third-party widgets, no patches, no shortcuts.</p>
+          <p>That is exactly what we do for our clients:</p>
+        </div>
+        <ul class="check-list">
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(196,82,42,0.1)" stroke="#C4522A" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>WCAG 2.2 Audits</strong> with prioritized findings report and remediation plan</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(196,82,42,0.1)" stroke="#C4522A" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Strategic consulting</strong> to integrate accessibility into design and development processes</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(196,82,42,0.1)" stroke="#C4522A" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Training</strong> for design, development and product teams</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(196,82,42,0.1)" stroke="#C4522A" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Testing with people with disabilities</strong> — real assistive technology users</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="rgba(196,82,42,0.1)" stroke="#C4522A" stroke-width="1"/><path d="M6 10.5 L9 13.5 L14 7.5" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Continuous monitoring</strong> to maintain conformity with every update</span>
+          </li>
+        </ul>
+        <div class="contact-block">
+          <div class="contact-block-title">Does your organization need to improve its accessibility?</div>
+          <p class="contact-block-body">Let's talk. No commitment — just a first conversation to understand your context and see how we can help.</p>
+          <a href="mailto:hola@accesa.agency" class="contact-block-email">hola@accesa.agency</a>
+        </div>
+      </section>
+
+    </div><!-- /panel-clientes -->
+
+    <!-- ══ PANEL TÉCNICO ══ -->
+    <div id="panel-tecnicos" class="audience-panel" role="tabpanel" aria-labelledby="tab-tecnicos">
+
+      <section class="content-section" id="tec-conformidad">
+        <div class="section-tag">Conformity</div>
+        <h2 class="section-title">WCAG 2.2 Conformity Declaration</h2>
+        <div class="section-body">
+          <p>This website declares <strong>full conformity</strong> with the Web Content Accessibility Guidelines (WCAG) version 2.2, level AA, published by the W3C.</p>
+          <p>This statement was drafted in <strong>January 2025</strong> and applies to the domain <strong>accesa.agency</strong>. It will be reviewed every six months or upon any significant site update.</p>
+        </div>
+
+        <table class="tech-table" aria-label="Conformity summary by WCAG principle">
+          <thead>
+            <tr>
+              <th scope="col">Principle</th>
+              <th scope="col">Level</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Perceivable</strong> — Alternative text, contrast, adaptability</td>
+              <td><span class="pill pill-blue">AA</span></td>
+              <td><span class="pill pill-green">Conformant</span></td>
+            </tr>
+            <tr>
+              <td><strong>Operable</strong> — Keyboard, navigation, sufficient time</td>
+              <td><span class="pill pill-blue">AA</span></td>
+              <td><span class="pill pill-green">Conformant</span></td>
+            </tr>
+            <tr>
+              <td><strong>Understandable</strong> — Readability, predictability, assistance</td>
+              <td><span class="pill pill-blue">AA</span></td>
+              <td><span class="pill pill-green">Conformant</span></td>
+            </tr>
+            <tr>
+              <td><strong>Robust</strong> — Compatibility with assistive technology</td>
+              <td><span class="pill pill-blue">AA</span></td>
+              <td><span class="pill pill-green">Conformant</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="content-section" id="tec-implementacion">
+        <div class="section-tag">Technical implementation</div>
+        <h2 class="section-title">What was implemented and how</h2>
+        <div class="section-body">
+          <p>Accessibility was integrated from design, not added as a later layer. The main technical decisions:</p>
+        </div>
+
+        <table class="tech-table" aria-label="Technical implementation details">
+          <thead>
+            <tr>
+              <th scope="col">WCAG Criterion</th>
+              <th scope="col">Implementation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1.1.1</strong> Contenido no textual</td><td>Todos los SVGs decorativos tienen <code>aria-hidden="true" focusable="false"</code>. Logos con <code>aria-label</code> descriptivo.</td></tr>
+            <tr><td><strong>1.3.1</strong> Información y relaciones</td><td>Landmarks semánticos: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>. Secciones con <code>aria-labelledby</code>.</td></tr>
+            <tr><td><strong>1.4.3</strong> Contraste mínimo</td><td>Relación de contraste mínima 4.5:1 en texto normal, 3:1 en texto grande. Verificado con herramientas APCA.</td></tr>
+            <tr><td><strong>1.4.4</strong> Cambio de tamaño</td><td>Tipografía en unidades relativas. Sitio funcional hasta 400% de zoom sin pérdida de contenido.</td></tr>
+            <tr><td><strong>2.1.1</strong> Teclado</td><td>Toda la funcionalidad operable por teclado. Orden de foco lógico y coherente.</td></tr>
+            <tr><td><strong>2.4.1</strong> Evitar bloques</td><td>Skip link "Saltar al contenido principal" visible al recibir foco.</td></tr>
+            <tr><td><strong>2.4.7</strong> Foco visible</td><td><code>outline: 3px solid var(--tierra)</code> en todos los elementos interactivos vía <code>:focus-visible</code>.</td></tr>
+            <tr><td><strong>2.3.3</strong> Animación desde interacción</td><td><code>@media (prefers-reduced-motion: reduce)</code> detiene todas las animaciones en loop.</td></tr>
+            <tr><td><strong>1.3.5</strong> Identificación del propósito</td><td>Campos de formulario con <code>autocomplete</code> apropiado: name, email, organization.</td></tr>
+            <tr><td><strong>4.1.2</strong> Nombre, función, valor</td><td>Elementos interactivos con roles ARIA correctos, estados y propiedades.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="content-section" id="tec-pruebas">
+        <div class="section-tag">Testing methodology</div>
+        <h2 class="section-title">How this site was evaluated</h2>
+        <div class="section-body">
+          <p>The evaluation combined expert manual review, testing with real assistive technology and automated tools. No automated tool alone can detect all accessibility issues — that is why human review is always required.</p>
+        </div>
+        <table class="tech-table" aria-label="Evaluation tools and methods">
+          <thead>
+            <tr>
+              <th scope="col">Tool / Method</th>
+              <th scope="col">Type</th>
+              <th scope="col">Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Manual HTML/ARIA code review</td><td><span class="pill pill-amber">Manual</span></td><td>Semantic structure, roles and properties</td></tr>
+            <tr><td>VoiceOver (macOS / iOS)</td><td><span class="pill pill-amber">Manual</span></td><td>Screen reader experience</td></tr>
+            <tr><td>Navegación por teclado</td><td><span class="pill pill-amber">Manual</span></td><td>Focus order, operability, skip links</td></tr>
+            <tr><td>Axe DevTools</td><td><span class="pill pill-blue">Automatic</span></td><td>Detection of automatable WCAG errors</td></tr>
+            <tr><td>Lighthouse Accessibility</td><td><span class="pill pill-blue">Automatic</span></td><td>General score and basic criteria</td></tr>
+            <tr><td>Colour Contrast Analyser</td><td><span class="pill pill-blue">Automatic</span></td><td>Contrast ratio verification</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="content-section" id="tec-historial">
+        <div class="section-tag">History</div>
+        <h2 class="section-title">Audit log</h2>
+        <div class="timeline" aria-label="History de auditorías de accesibilidad">
+          <div class="timeline-item">
+            <div class="timeline-date">Launch date — Initial audit</div>
+            <p class="timeline-text">First complete site audit. All detected findings were identified and corrected. Final status: fully conformant with WCAG 2.2 AA. <em style="color:var(--tierra); font-style:normal;">(Fill in with actual date at site launch)</em></p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">6 months later — First scheduled review</div>
+            <p class="timeline-text">Planned semi-annual review. Possible impacts of content updates and new features will be evaluated. <em style="color:var(--tierra); font-style:normal;">(Fill in with actual date)</em></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="tec-contacto">
+        <div class="section-tag">Technical contact</div>
+        <h2 class="section-title">Report a technical accessibility issue</h2>
+        <div class="section-body">
+          <p>If you identify a technical accessibility issue — ARIA error, contrast problem, keyboard navigation failure or other WCAG criterion — you can report it directly to the Accesa technical team.</p>
+          <p>Include in your report: page URL, problem description, assistive technology used (if applicable), and steps to reproduce it.</p>
+        </div>
+        <div class="contact-block">
+          <div class="contact-block-title">Technical accessibility report</div>
+          <p class="contact-block-body">Response time: 5 business days. Resolution or alternative time: 15 business days.</p>
+          <a href="mailto:accesibilidad@accesa.agency" class="contact-block-email">accesibilidad@accesa.agency</a>
+        </div>
+      </section>
+
+    </div><!-- /panel-tecnicos -->
+
+  </div><!-- /content -->
+</div><!-- /page-body -->
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <a href="/en/" class="footer-logo" aria-label="Accesa — inicio">
+    <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+      <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
+      <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+    </svg>
+    <span class="footer-wordmark">accesa</span>
+  </a>
+  <a href="https://www.w3.org/TR/WCAG22/" class="footer-wcag" target="_blank" rel="noopener noreferrer" aria-label="WCAG 2.2 AA — view W3C specification (opens in new tab)">
+    WCAG 2.2 AA ↗
+  </a>
+  <span class="footer-copy">Accessibility Statement · Accesa 2026</span>
+</footer>
+
+<script is:inline>
+// ── TABS ──
+var tabs = document.querySelectorAll('.tab-btn');
+var panels = document.querySelectorAll('.audience-panel');
+
+var sidebarLinks = {
+  'panel-comunidad': [
+    { href: '#com-compromiso',  label: 'Our commitment' },
+    { href: '#com-tecnologias', label: 'Tecnologías compatibles' },
+    { href: '#com-barreras',    label: 'Report a barrier' }
+  ],
+  'panel-clientes': [
+    { href: '#org-valor',     label: 'Why it matters' },
+    { href: '#org-servicios', label: 'Cómo podemos ayudarte' }
+  ],
+  'panel-tecnicos': [
+    { href: '#tec-conformidad',    label: 'Declaración de conformidad' },
+    { href: '#tec-implementacion', label: 'Technical implementation' },
+    { href: '#tec-pruebas',        label: 'Testing methodology' },
+    { href: '#tec-historial',      label: 'Audit log' },
+    { href: '#tec-contacto',       label: 'Technical contact' }
+  ]
+};
+
+function updateSidebar(panelId) {
+  var nav = document.getElementById('sidebar-links');
+  nav.innerHTML = '';
+  var links = sidebarLinks[panelId] || [];
+  links.forEach(function(item) {
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = item.href;
+    a.textContent = item.label;
+    li.appendChild(a);
+    nav.appendChild(li);
+  });
+}
+
+tabs.forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    var targetId = tab.getAttribute('aria-controls');
+
+    tabs.forEach(function(t) {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    panels.forEach(function(p) {
+      p.classList.remove('active');
+    });
+
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    var panel = document.getElementById(targetId);
+    if (panel) panel.classList.add('active');
+
+    updateSidebar(targetId);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Keyboard navigation entre tabs
+  tab.addEventListener('keydown', function(e) {
+    var idx = Array.from(tabs).indexOf(tab);
+    if (e.key === 'ArrowRight' && idx < tabs.length - 1) {
+      tabs[idx + 1].focus();
+      tabs[idx + 1].click();
+    }
+    if (e.key === 'ArrowLeft' && idx > 0) {
+      tabs[idx - 1].focus();
+      tabs[idx - 1].click();
+    }
+  });
+});
+
+// Inicializar sidebar
+updateSidebar('panel-comunidad');
+
+// Highlight sidebar link activo al hacer scroll
+window.addEventListener('scroll', function() {
+  var links = document.querySelectorAll('.sidebar-nav a');
+  var activePanel = document.querySelector('.audience-panel.active');
+  if (!activePanel) return;
+
+  var sections = activePanel.querySelectorAll('.content-section');
+  var current = '';
+
+  sections.forEach(function(s) {
+    if (window.scrollY >= s.offsetTop - 160) {
+      current = s.id;
+    }
+  });
+
+  links.forEach(function(a) {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) {
+      a.classList.add('active');
+    }
+  });
+});
+</script>
+</Base>

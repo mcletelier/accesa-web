@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import BlogHeader from '../../components/BlogHeader.astro';
+import BlogFooter from '../../components/BlogFooter.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getPublishedPosts, tagSlug } from '../../lib/blog';
+import '../../styles/blog.css';
+
+const posts = await getPublishedPosts();
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort((a, b) => a.localeCompare(b, 'es'));
+---
+<Base
+  lang="es"
+  title="Blog — Accesa"
+  description="Artículos sobre accesibilidad digital, WCAG 2.2 y normativa chilena para equipos del sector público y privado."
+  path="/blog/"
+>
+<BlogHeader current="blog" />
+<main id="main-content">
+  <div class="b-hero">
+    <p class="b-eyebrow">Blog</p>
+    <h1 class="b-title">Notas sobre <em>accesibilidad</em> digital</h1>
+    <p class="b-intro">Lo que aprendemos auditando, diseñando y capacitando: criterios WCAG explicados con ejemplos, normativa chilena y prácticas para equipos que quieren hacer las cosas bien.</p>
+  </div>
+
+  <div class="b-wrap">
+    {tags.length > 0 && (
+      <nav class="b-filter" aria-labelledby="filtro-titulo">
+        <p class="b-filter-title" id="filtro-titulo">Explorar por tema</p>
+        <ul class="tag-list" role="list">
+          {tags.map((t) => <li><a class="tag-link" href={`/blog/etiqueta/${tagSlug(t)}/`}>{t}</a></li>)}
+        </ul>
+      </nav>
+    )}
+
+    {posts.length > 0 ? (
+      <ol class="post-list" role="list" aria-label="Artículos, del más reciente al más antiguo">
+        {posts.map((post) => <li><PostCard post={post} /></li>)}
+      </ol>
+    ) : (
+      <div class="b-empty">
+        <strong>Pronto, los primeros artículos.</strong>
+        Mientras tanto, puedes <a href="/#contacto">escribirnos</a> si tienes una pregunta sobre accesibilidad.
+      </div>
+    )}
+  </div>
+</main>
+<BlogFooter />
+</Base>

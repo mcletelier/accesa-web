@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fondo -->
+  <rect width="64" height="64" fill="#1A1A1A"/>
+  <!-- Círculo exterior -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#C4522A" stroke-width="2.5"/>
+  <!-- A sin barra -->
+  <path d="M20 46 L32 16 L44 46" fill="none" stroke="#FAF6EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Punto dorado -->
+  <circle cx="32" cy="13" r="4" fill="#E8A030"/>
+</svg>

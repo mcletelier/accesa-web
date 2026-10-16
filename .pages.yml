@@ -1,0 +1,72 @@
+# Configuración del editor visual (Pages CMS — https://app.pagescms.org)
+# Define qué se puede editar desde el editor y con qué campos.
+
+media:
+  input: public/images/blog
+  output: /images/blog
+  extensions: [jpg, jpeg, png, webp, avif, svg]
+
+content:
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/content/blog
+    # El nombre del archivo define la URL: /blog/<nombre>/
+    filename:
+      template: "{fields.title}.md"
+      field: create
+    view:
+      fields: [title, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: description
+        label: Descripción
+        description: Resumen de 1 o 2 frases. Aparece en el listado del blog, en Google y al compartir en LinkedIn.
+        type: text
+        required: true
+      - name: date
+        label: Fecha de publicación
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: updated
+        label: Fecha de actualización (opcional)
+        description: Úsala solo si haces cambios importantes a un artículo ya publicado.
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: author
+        label: Autora
+        type: string
+        default: Mariela Letelier
+      - name: tags
+        label: Etiquetas
+        description: Entre una y tres. Escríbelas siempre igual (ej. "WCAG 2.2", "Sector público") para que se agrupen.
+        type: string
+        list: true
+      - name: image
+        label: Imagen destacada (opcional)
+        type: image
+      - name: imageAlt
+        label: Texto alternativo de la imagen
+        description: Obligatorio si agregas imagen destacada. Describe lo que muestra y por qué importa.
+        type: string
+      - name: draft
+        label: Borrador
+        description: Mientras esté marcado, el artículo no se publica.
+        type: boolean
+        default: true
+      - name: body
+        label: Contenido
+        description: Usa Título 2 para secciones y Título 3 para subsecciones. El título del artículo ya es el Título 1.
+        type: rich-text
