@@ -1,18 +1,42 @@
 ---
+/**
+ * Tarjeta de artículo para el índice y las páginas de etiqueta.
+ * - variant "featured": destacado grande (imagen y texto lado a lado).
+ * - variant "grid": tarjeta de la grilla.
+ * La imagen es decorativa aquí (alt=""), porque el título del enlace ya describe el artículo;
+ * el texto alternativo completo se usa en la página del artículo.
+ * Toda la tarjeta es clicable: el enlace del título se extiende sobre ella.
+ */
 import { formatDate, isoDate, tagSlug, type Post } from '../lib/blog';
-interface Props { post: Post; headingLevel?: 2 | 3 }
-const { post, headingLevel = 2 } = Astro.props;
+interface Props { post: Post; headingLevel?: 2 | 3; variant?: 'featured' | 'grid'; eager?: boolean }
+const { post, headingLevel = 2, variant = 'grid', eager = false } = Astro.props;
 const H = `h${headingLevel}` as 'h2' | 'h3';
-const { title, description, date, tags } = post.data;
+const { title, description, date, tags, image } = post.data;
 const href = `/blog/${post.id}/`;
 ---
-<article class="post-card">
-  <p class="post-card-date"><time datetime={isoDate(date)}>{formatDate(date)}</time></p>
-  <H class="post-card-title"><a href={href}>{title}</a></H>
-  <p class="post-card-desc">{description}</p>
-  {tags.length > 0 && (
-    <ul class="tag-list" role="list" aria-label="Etiquetas">
-      {tags.map((t) => <li><a class="tag-link" href={`/blog/etiqueta/${tagSlug(t)}/`}>{t}</a></li>)}
-    </ul>
-  )}
+<article class:list={['post-card', `post-card--${variant}`]}>
+  <div class="post-card-media" aria-hidden="true">
+    {image ? (
+      <img src={image} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" />
+    ) : (
+      <div class="post-card-placeholder">
+        <svg viewBox="0 0 60 60" focusable="false">
+          <circle cx="30" cy="30" r="26" fill="none" stroke="#FAF6EE" stroke-opacity="0.45" stroke-width="2.5"/>
+          <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="13" r="4" fill="#E8A030"/>
+        </svg>
+      </div>
+    )}
+  </div>
+  <div class="post-card-body">
+    {variant === 'featured' && <p class="post-card-kicker">Último artículo</p>}
+    <p class="post-card-date"><time datetime={isoDate(date)}>{formatDate(date)}</time></p>
+    <H class="post-card-title"><a href={href}>{title}</a></H>
+    <p class="post-card-desc">{description}</p>
+    {tags.length > 0 && (
+      <ul class="tag-list" role="list" aria-label="Etiquetas">
+        {tags.map((t) => <li><a class="tag-link" href={`/blog/etiqueta/${tagSlug(t)}/`}>{t}</a></li>)}
+      </ul>
+    )}
+  </div>
 </article>

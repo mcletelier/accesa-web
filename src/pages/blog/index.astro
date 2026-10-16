@@ -35,7 +35,11 @@ const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort((a, b) => a.lo
 
     {posts.length > 0 ? (
       <ol class="post-list" role="list" aria-label="Artículos, del más reciente al más antiguo">
-        {posts.map((post) => <li><PostCard post={post} /></li>)}
+        {posts.map((post, i) => (
+          <li class={i === 0 ? 'post-list-featured' : undefined}>
+            <PostCard post={post} variant={i === 0 ? 'featured' : 'grid'} eager={i === 0} />
+          </li>
+        ))}
       </ol>
     ) : (
       <div class="b-empty">
