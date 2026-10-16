@@ -16,15 +16,15 @@ import '../../../styles/declaracion.css';
     </svg>
     <span class="nav-wordmark">accesa</span>
   </a>
-  <a href="/en/" class="nav-back" aria-label="Volver al sitio principal">
-    ← Volver al sitio
+  <a href="/en/" class="nav-back" aria-label="Back to main site">
+    ← Back to site
   </a>
 </nav>
 </header>
 
 <!-- ═══ HERO ═══ -->
-<div class="page-hero" role="region" aria-label="Encabezado de declaración de accesibilidad">
-  <div class="hero-badge" role="status" aria-label="Estado de conformidad: Totalmente conforme con WCAG 2.2 AA">
+<div class="page-hero" role="region" aria-label="Accessibility statement header">
+  <div class="hero-badge" role="status" aria-label="Conformance status: Fully conformant with WCAG 2.2 AA">
     <span class="badge-dot" aria-hidden="true"></span>
     <span class="badge-text">WCAG 2.2 AA — Fully conformant</span>
   </div>
@@ -45,11 +45,11 @@ import '../../../styles/declaracion.css';
     </div>
     <div class="meta-item">
       <span class="meta-label">Last audit</span>
-      <span class="meta-val">Mayo 2026</span>
+      <span class="meta-val">May 2026</span>
     </div>
     <div class="meta-item">
       <span class="meta-label">Next review</span>
-      <span class="meta-val">Agosto 2026</span>
+      <span class="meta-val">August 2026</span>
     </div>
   </div>
 </div>
@@ -67,14 +67,14 @@ import '../../../styles/declaracion.css';
 
   <!-- SIDEBAR -->
   <nav class="sidebar" aria-label="Section index">
-    <div class="sidebar-title" id="sidebar-label">En esta página</div>
+    <div class="sidebar-title" id="sidebar-label">On this page</div>
     <ul class="sidebar-nav" aria-labelledby="sidebar-label" id="sidebar-links">
       <!-- Se actualiza por JS según el tab activo -->
     </ul>
     <div class="sidebar-divider"></div>
     <div style="font-family:'Libre Baskerville',serif; font-size:0.78rem; color:var(--gris); line-height:1.9;">
       <strong style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--noche); display:block; margin-bottom:0.4rem;">Need help?</strong>
-      <a href="mailto:accesibilidad@accesa.agency" style="color:var(--tierra); text-decoration:underline; text-underline-offset:3px; word-break:break-all; display:block;">accesibilidad@accesa.agency</a>
+      <a href="mailto:accesibilidad@accesa.agency" style="color:var(--tierra-texto); text-decoration:underline; text-underline-offset:3px; word-break:break-all; display:block;">accesibilidad@accesa.agency</a>
     </div>
   </nav>
 
@@ -269,16 +269,16 @@ import '../../../styles/declaracion.css';
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>1.1.1</strong> Contenido no textual</td><td>Todos los SVGs decorativos tienen <code>aria-hidden="true" focusable="false"</code>. Logos con <code>aria-label</code> descriptivo.</td></tr>
-            <tr><td><strong>1.3.1</strong> Información y relaciones</td><td>Landmarks semánticos: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>. Secciones con <code>aria-labelledby</code>.</td></tr>
-            <tr><td><strong>1.4.3</strong> Contraste mínimo</td><td>Relación de contraste mínima 4.5:1 en texto normal, 3:1 en texto grande. Verificado con herramientas APCA.</td></tr>
-            <tr><td><strong>1.4.4</strong> Cambio de tamaño</td><td>Tipografía en unidades relativas. Sitio funcional hasta 400% de zoom sin pérdida de contenido.</td></tr>
-            <tr><td><strong>2.1.1</strong> Teclado</td><td>Toda la funcionalidad operable por teclado. Orden de foco lógico y coherente.</td></tr>
-            <tr><td><strong>2.4.1</strong> Evitar bloques</td><td>Skip link "Saltar al contenido principal" visible al recibir foco.</td></tr>
-            <tr><td><strong>2.4.7</strong> Foco visible</td><td><code>outline: 3px solid var(--tierra)</code> en todos los elementos interactivos vía <code>:focus-visible</code>.</td></tr>
-            <tr><td><strong>2.3.3</strong> Animación desde interacción</td><td><code>@media (prefers-reduced-motion: reduce)</code> detiene todas las animaciones en loop.</td></tr>
-            <tr><td><strong>1.3.5</strong> Identificación del propósito</td><td>Campos de formulario con <code>autocomplete</code> apropiado: name, email, organization.</td></tr>
-            <tr><td><strong>4.1.2</strong> Nombre, función, valor</td><td>Elementos interactivos con roles ARIA correctos, estados y propiedades.</td></tr>
+            <tr><td><strong>1.1.1</strong> Non-text content</td><td>All decorative SVGs have <code>aria-hidden="true" focusable="false"</code>. Logos have a descriptive <code>aria-label</code>.</td></tr>
+            <tr><td><strong>1.3.1</strong> Info and relationships</td><td>Semantic landmarks: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>. Sections with <code>aria-labelledby</code>.</td></tr>
+            <tr><td><strong>1.4.3</strong> Contrast (minimum)</td><td>Minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text. Verified with APCA tools.</td></tr>
+            <tr><td><strong>1.4.4</strong> Resize text</td><td>Typography in relative units. The site works up to 400% zoom without loss of content.</td></tr>
+            <tr><td><strong>2.1.1</strong> Keyboard</td><td>All functionality is operable by keyboard. Logical and consistent focus order.</td></tr>
+            <tr><td><strong>2.4.1</strong> Bypass blocks</td><td>"Skip to main content" link, visible when it receives focus.</td></tr>
+            <tr><td><strong>2.4.7</strong> Focus visible</td><td><code>outline: 3px solid var(--tierra)</code> on all interactive elements via <code>:focus-visible</code>.</td></tr>
+            <tr><td><strong>2.3.3</strong> Animation from interactions</td><td><code>@media (prefers-reduced-motion: reduce)</code> stops all looping animations.</td></tr>
+            <tr><td><strong>1.3.5</strong> Identify input purpose</td><td>Form fields with the appropriate <code>autocomplete</code> values: name, email, organization.</td></tr>
+            <tr><td><strong>4.1.2</strong> Name, role, value</td><td>Interactive elements with correct ARIA roles, states and properties.</td></tr>
           </tbody>
         </table>
       </section>
@@ -300,7 +300,7 @@ import '../../../styles/declaracion.css';
           <tbody>
             <tr><td>Manual HTML/ARIA code review</td><td><span class="pill pill-amber">Manual</span></td><td>Semantic structure, roles and properties</td></tr>
             <tr><td>VoiceOver (macOS / iOS)</td><td><span class="pill pill-amber">Manual</span></td><td>Screen reader experience</td></tr>
-            <tr><td>Navegación por teclado</td><td><span class="pill pill-amber">Manual</span></td><td>Focus order, operability, skip links</td></tr>
+            <tr><td>Keyboard navigation</td><td><span class="pill pill-amber">Manual</span></td><td>Focus order, operability, skip links</td></tr>
             <tr><td>Axe DevTools</td><td><span class="pill pill-blue">Automatic</span></td><td>Detection of automatable WCAG errors</td></tr>
             <tr><td>Lighthouse Accessibility</td><td><span class="pill pill-blue">Automatic</span></td><td>General score and basic criteria</td></tr>
             <tr><td>Colour Contrast Analyser</td><td><span class="pill pill-blue">Automatic</span></td><td>Contrast ratio verification</td></tr>
@@ -311,14 +311,14 @@ import '../../../styles/declaracion.css';
       <section class="content-section" id="tec-historial">
         <div class="section-tag">History</div>
         <h2 class="section-title">Audit log</h2>
-        <div class="timeline" aria-label="History de auditorías de accesibilidad">
+        <div class="timeline" aria-label="Accessibility audit history">
           <div class="timeline-item">
             <div class="timeline-date">Launch date — Initial audit</div>
-            <p class="timeline-text">First complete site audit. All detected findings were identified and corrected. Final status: fully conformant with WCAG 2.2 AA. <em style="color:var(--tierra); font-style:normal;">(Fill in with actual date at site launch)</em></p>
+            <p class="timeline-text">First complete site audit. All detected findings were identified and corrected. Final status: fully conformant with WCAG 2.2 AA. <em style="color:var(--tierra-texto); font-style:normal;">(Fill in with actual date at site launch)</em></p>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">6 months later — First scheduled review</div>
-            <p class="timeline-text">Planned semi-annual review. Possible impacts of content updates and new features will be evaluated. <em style="color:var(--tierra); font-style:normal;">(Fill in with actual date)</em></p>
+            <p class="timeline-text">Planned semi-annual review. Possible impacts of content updates and new features will be evaluated. <em style="color:var(--tierra-texto); font-style:normal;">(Fill in with actual date)</em></p>
           </div>
         </div>
       </section>
@@ -345,7 +345,7 @@ import '../../../styles/declaracion.css';
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <a href="/en/" class="footer-logo" aria-label="Accesa — inicio">
+  <a href="/en/" class="footer-logo" aria-label="Accesa — home">
     <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
       <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
       <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -367,15 +367,15 @@ var panels = document.querySelectorAll('.audience-panel');
 var sidebarLinks = {
   'panel-comunidad': [
     { href: '#com-compromiso',  label: 'Our commitment' },
-    { href: '#com-tecnologias', label: 'Tecnologías compatibles' },
+    { href: '#com-tecnologias', label: 'Compatible technologies' },
     { href: '#com-barreras',    label: 'Report a barrier' }
   ],
   'panel-clientes': [
     { href: '#org-valor',     label: 'Why it matters' },
-    { href: '#org-servicios', label: 'Cómo podemos ayudarte' }
+    { href: '#org-servicios', label: 'How we can help' }
   ],
   'panel-tecnicos': [
-    { href: '#tec-conformidad',    label: 'Declaración de conformidad' },
+    { href: '#tec-conformidad',    label: 'Conformance statement' },
     { href: '#tec-implementacion', label: 'Technical implementation' },
     { href: '#tec-pruebas',        label: 'Testing methodology' },
     { href: '#tec-historial',      label: 'Audit log' },
