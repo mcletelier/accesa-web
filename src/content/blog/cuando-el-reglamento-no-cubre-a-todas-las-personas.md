@@ -10,6 +10,7 @@ tags:
   - Documentos accesibles
   - Ajustes necesarios
 image: /images/blog/compagnons-HE1zW44Zm_Y-unsplash.jpg
+imageAlt: Manos de una persona escribiendo en un dispositivo braille electrónico, ubicado sobre un escritorio frente a un teclado de computador.
 draft: true
 ---
 ## Qué pasó
