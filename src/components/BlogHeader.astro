@@ -1,13 +1,29 @@
 ---
-/** Encabezado de páginas secundarias: blog y avisos (mismo estilo que la Declaración de Accesibilidad) */
+/**
+ * Encabezado de páginas secundarias (blog y avisos).
+ * Mismo menú que la portada. En pantallas pequeñas se colapsa en un botón "Menú";
+ * sin JavaScript, los enlaces se muestran siempre.
+ */
 interface Props { current?: 'blog' | 'post'; lang?: 'es' | 'en' }
 const { current, lang = 'es' } = Astro.props;
 const es = lang === 'es';
 const home = es ? '/' : '/en/';
+const links = es
+  ? [
+      { href: '/#servicios', label: 'Servicios' },
+      { href: '/#nosotras', label: 'Nosotras' },
+      { href: '/#proceso', label: 'Proceso' },
+      { href: '/blog/', label: 'Blog', current: current === 'blog' },
+    ]
+  : [
+      { href: '/en/#servicios', label: 'Services' },
+      { href: '/en/#nosotras', label: 'About' },
+      { href: '/en/#proceso', label: 'Process' },
+    ];
 ---
 <a href="#main-content" class="skip-link">{es ? 'Saltar al contenido principal' : 'Skip to main content'}</a>
 <header>
-<nav class="b-nav" aria-label={es ? 'Navegación principal' : 'Main navigation'}>
+<nav class="b-nav" id="b-nav" aria-label={es ? 'Navegación principal' : 'Main navigation'}>
   <a href={home} class="b-nav-logo" aria-label={es ? 'Accesa — inicio' : 'Accesa — home'}>
     <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
       <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
@@ -16,10 +32,46 @@ const home = es ? '/' : '/en/';
     </svg>
     <span class="b-nav-wordmark">accesa</span>
   </a>
-  <ul class="b-nav-links" role="list">
-    <li><a href={`${home}#servicios`}>{es ? 'Servicios' : 'Services'}</a></li>
-    {es && <li><a href="/blog/" aria-current={current === 'blog' ? 'page' : undefined}>Blog</a></li>}
-    <li><a href={`${home}#contacto`} class="b-nav-cta">{es ? 'Conversemos' : "Let's talk"}</a></li>
-  </ul>
+
+  <button class="b-nav-toggle" type="button" aria-expanded="false" aria-controls="b-nav-menu" hidden>
+    <span class="b-nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span>{es ? 'Menú' : 'Menu'}</span>
+  </button>
+
+  <div class="b-nav-menu" id="b-nav-menu">
+    <ul class="b-nav-links" role="list">
+      {links.map((l) => (
+        <li><a href={l.href} aria-current={l.current ? 'page' : undefined}>{l.label}</a></li>
+      ))}
+      <li><a href={`${home}#contacto`} class="b-nav-cta">{es ? 'Conversemos' : "Let's talk"}</a></li>
+      <li>
+        {es
+          ? <a href="/en/" class="b-nav-lang" lang="en" hreflang="en" aria-label="English version of the site">EN</a>
+          : <a href="/" class="b-nav-lang" lang="es" hreflang="es" aria-label="Versión en español del sitio">ES</a>}
+      </li>
+    </ul>
+  </div>
 </nav>
 </header>
+
+<script is:inline>
+(function () {
+  var nav = document.getElementById('b-nav');
+  if (!nav) return;
+  var btn = nav.querySelector('.b-nav-toggle');
+  var menu = document.getElementById('b-nav-menu');
+  nav.classList.add('has-js');
+  btn.hidden = false;
+  function setOpen(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.classList.toggle('is-open', open);
+  }
+  btn.addEventListener('click', function () {
+    setOpen(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) { setOpen(false); btn.focus(); }
+  });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+})();
+</script>
