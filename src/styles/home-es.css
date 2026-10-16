@@ -1042,3 +1042,17 @@ nav.scrolled .lang-switch:hover {
 @media (prefers-reduced-motion: reduce) {
   .btn-auditor:hover { transform: none; }
 }
+
+/* ── FUENTES DE LAS CIFRAS ── */
+.numeros-fuentes {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: rgba(250,246,238,0.82);
+  margin-top: 1.6rem;
+  padding: 0 2.5rem;
+  line-height: 1.8;
+}
+.numeros-fuentes a { color: var(--crema); text-decoration: underline; text-underline-offset: 3px; }
+.numeros-fuentes a:hover { color: var(--acento); }
+@media (max-width: 768px) { .numeros-fuentes { padding: 0 1rem; } }
