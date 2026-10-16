@@ -53,6 +53,8 @@ Esto nos lleva a las siguientes preguntas: ¿existen equipos técnicos capacitad
 
 ---
 
+Foto: [Compagnons](https://unsplash.com/@sigmund) en [Unsplash](https://unsplash.com/photos/HE1zW44Zm_Y).
+
 **Fuentes**
 
 - [Ley 20.422, que establece normas sobre igualdad de oportunidades e inclusión social de personas con discapacidad](https://www.bcn.cl/leychile/navegar?idLey=20422) — Biblioteca del Congreso Nacional.
