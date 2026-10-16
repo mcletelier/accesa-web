@@ -1,6 +1,8 @@
 ---
-title: "Cuando el reglamento no prevé a todas las personas"
-description: "Un concejal con discapacidad visual no pudo presentar un informe en las mismas condiciones que sus pares. Qué pasó, cómo debió resolverse y qué establece la normativa chilena."
+title: Cuando el reglamento no cubre a todas las personas
+description: Un concejal con discapacidad visual no pudo presentar un informe en
+  las mismas condiciones que sus pares. Qué sucedió, cómo debió resolverse y qué
+  establece la normativa chilena.
 date: 2026-10-16
 author: Mariela Letelier
 tags:
@@ -9,14 +11,13 @@ tags:
   - Ajustes necesarios
 draft: true
 ---
-
 ## Qué pasó
 
-En junio de 2026, en la sesión de un concejo municipal chileno, un concejal con discapacidad visual debía exponer los acuerdos de una comisión. Como no puede leer documentos impresos, había coordinado con otro concejal para que leyera el informe en su lugar.
+En junio de 2026, en la sesión de un concejo municipal chileno, un concejal con discapacidad visual debía exponer los acuerdos de una comisión. Como no podía leer documentos impresos, había coordinado con otro concejal para que leyera el informe en su lugar.
 
 Durante la sesión, un integrante del concejo pidió que el informe lo leyera el propio concejal, porque así lo establece el reglamento. Otro integrante recordó que él no puede leer. La discusión continuó, el concejal se retiró de la sala y la sesión se suspendió por algunos minutos. Al día siguiente hubo disculpas públicas.
 
-El concejal ya había resuelto cómo participar. Lo que faltaba era una regla que respaldara esa solución.
+El concejal ya había resuelto cómo participar. Lo que faltaba era una regla que respaldara esa solución.(Esta observación se hace cargo del aspecto formal de la situación, no del humano y ético.)
 
 ## Cómo debió resolverse
 
@@ -44,7 +45,7 @@ El concejal ya había resuelto cómo participar. Lo que faltaba era una regla qu
 
 Un concejal representa a quienes lo eligieron. Cuando accede a la información de su cargo en igualdad de condiciones, esa representación funciona plenamente.
 
-Las herramientas para lograrlo ya existen en la normativa chilena. Llevarlas a la práctica en los concejos depende de documentos preparados, reglas escritas y equipos capacitados.
+Las herramientas para lograrlo ya existen en la normativa chilena. Llevarlas a la práctica en los concejos depende de documentos preparados, reglas escritas y equipos capacitados. Lo qué nos lleva a las siguientes preguntas...¿Existen equipos técnicos capacitados? ¿Sobré quién recae esa responsabilidad? ¿O depende de la voluntad política en cada caso? ¿Cómo hacemos que la normativa se cumpla para no llegar a estas instancias?
 
 ---
 
@@ -54,3 +55,4 @@ Las herramientas para lograrlo ya existen en la normativa chilena. Llevarlas a l
 - [Convención sobre los Derechos de las Personas con Discapacidad](https://www.ohchr.org/es/instruments-mechanisms/instruments/convention-rights-persons-disabilities) — Naciones Unidas.
 - [Decreto 1 de 2015, norma técnica sobre sistemas y sitios web de los órganos de la Administración del Estado](https://www.bcn.cl/leychile/navegar?i=1078308) — Biblioteca del Congreso Nacional.
 - [Magallanes instala su primera Mesa de Transformación Digital Municipal](https://digital.gob.cl/media/noticias/magallanes-instala-su-primera-mesa-de-transformacion-digital-municipal-y-se-convierte-en-la-octava-region-en-implementarla/) — Secretaría de Gobierno Digital.
+
