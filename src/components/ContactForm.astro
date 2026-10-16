@@ -1,0 +1,188 @@
+---
+/**
+ * Formulario de contacto (ES / EN).
+ * - Con JavaScript: se envía sin recargar la página y el resultado se anuncia en pantalla y en lectores de pantalla.
+ * - Sin JavaScript: se envía igual y la persona llega a una página de confirmación o de error.
+ * El envío lo procesa functions/api/contacto.js (Cloudflare Pages Function + Resend).
+ */
+interface Props { lang: 'es' | 'en' }
+const { lang } = Astro.props;
+
+const t = {
+  es: {
+    required: 'obligatorio',
+    name: 'Tu nombre', namePh: 'María González',
+    org: 'Organización', orgPh: 'Empresa o institución',
+    email: 'Email', emailPh: 'maria@empresa.cl',
+    service: 'Qué necesitas', servicePh: 'Selecciona un servicio',
+    services: ['Auditoría de accesibilidad', 'Consultoría estratégica', 'Diseño inclusivo', 'Capacitación', 'Monitoreo continuo', 'No estoy segura aún'],
+    message: 'Cuéntanos más', messagePh: 'Describe brevemente tu proyecto o desafío...',
+    honeypot: 'No completes este campo',
+    submit: 'Enviar mensaje',
+    js: {
+      sending: 'Enviando…',
+      errName: 'Escribe tu nombre.',
+      errEmail: 'Escribe tu email.',
+      errEmailFormat: 'Revisa el email: debe tener un formato como nombre@dominio.cl.',
+      errMessage: 'Cuéntanos brevemente qué necesitas.',
+      success: '¡Gracias! Recibimos tu mensaje y te responderemos a {email}.',
+      failure: 'No pudimos enviar tu mensaje. Inténtalo de nuevo en unos minutos o escríbenos a hola@accesa.agency.',
+    },
+  },
+  en: {
+    required: 'required',
+    name: 'Your name', namePh: 'Maria González',
+    org: 'Organization', orgPh: 'Company or institution',
+    email: 'Email', emailPh: 'maria@company.com',
+    service: 'What do you need', servicePh: 'Select a service',
+    services: ['Accessibility audit', 'Strategic consulting', 'Inclusive design', 'Training', 'Continuous monitoring', "I'm not sure yet"],
+    message: 'Tell us more', messagePh: 'Briefly describe your project or challenge...',
+    honeypot: 'Do not fill in this field',
+    submit: 'Send message',
+    js: {
+      sending: 'Sending…',
+      errName: 'Enter your name.',
+      errEmail: 'Enter your email.',
+      errEmailFormat: 'Check the email: it should look like name@domain.com.',
+      errMessage: 'Tell us briefly what you need.',
+      success: 'Thank you! We received your message and will reply to {email}.',
+      failure: 'We could not send your message. Please try again in a few minutes or write to hola@accesa.agency.',
+    },
+  },
+}[lang];
+---
+<form class="contacto-form reveal" id="contact-form" action="/api/contacto" method="post" aria-labelledby="titulo-contacto" data-i18n={JSON.stringify(t.js)}>
+  <input type="hidden" name="lang" value={lang}>
+
+  <div class="form-group">
+    <label class="form-label" for="f-nombre">{t.name} <span class="form-req" aria-hidden="true">{t.required}</span></label>
+    <input id="f-nombre" name="nombre" type="text" class="form-input" placeholder={t.namePh} autocomplete="name" required maxlength="120">
+    <p class="form-error" id="f-nombre-error" hidden></p>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="f-org">{t.org}</label>
+    <input id="f-org" name="organizacion" type="text" class="form-input" placeholder={t.orgPh} autocomplete="organization" maxlength="160">
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="f-email">{t.email} <span class="form-req" aria-hidden="true">{t.required}</span></label>
+    <input id="f-email" name="email" type="email" class="form-input" placeholder={t.emailPh} autocomplete="email" required maxlength="200">
+    <p class="form-error" id="f-email-error" hidden></p>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="f-servicio">{t.service}</label>
+    <select id="f-servicio" name="servicio" class="form-select">
+      <option value="">{t.servicePh}</option>
+      {t.services.map((s) => <option value={s}>{s}</option>)}
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="f-mensaje">{t.message} <span class="form-req" aria-hidden="true">{t.required}</span></label>
+    <textarea id="f-mensaje" name="mensaje" class="form-textarea" placeholder={t.messagePh} required maxlength="5000"></textarea>
+    <p class="form-error" id="f-mensaje-error" hidden></p>
+  </div>
+
+  <!-- Trampa para robots: invisible para las personas y fuera del orden de tabulación -->
+  <div class="form-hp" aria-hidden="true">
+    <label for="f-web">{t.honeypot}</label>
+    <input id="f-web" name="sitio_web" type="text" tabindex="-1" autocomplete="off">
+  </div>
+
+  <button type="submit" class="form-submit"><span class="form-submit-label">{t.submit}</span> <span aria-hidden="true">&#8594;</span></button>
+
+  <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+</form>
+
+<script is:inline>
+(function () {
+  var form = document.getElementById('contact-form');
+  if (!form || !window.fetch || !window.FormData) return;
+  // Con JavaScript, la validación la hace este script con mensajes accesibles; sin él, la hace el navegador
+  form.noValidate = true;
+  var t = JSON.parse(form.getAttribute('data-i18n'));
+  var btn = form.querySelector('.form-submit');
+  var btnLabel = form.querySelector('.form-submit-label');
+  var status = document.getElementById('form-status');
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var sending = false;
+
+  function setError(field, msg) {
+    var err = document.getElementById(field.id + '-error');
+    field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', err.id);
+    err.textContent = msg;
+    err.hidden = false;
+  }
+  function clearErrors() {
+    form.querySelectorAll('[aria-invalid]').forEach(function (f) {
+      f.removeAttribute('aria-invalid');
+      f.removeAttribute('aria-describedby');
+    });
+    form.querySelectorAll('.form-error').forEach(function (e) { e.hidden = true; e.textContent = ''; });
+  }
+  function showStatus(msg, kind) {
+    status.textContent = msg;
+    status.className = 'form-status form-status--' + kind;
+    status.hidden = false;
+    status.focus();
+  }
+  function validate() {
+    var invalid = [];
+    var nombre = form.nombre, email = form.email, mensaje = form.mensaje;
+    if (!nombre.value.trim()) { setError(nombre, t.errName); invalid.push(nombre); }
+    if (!email.value.trim()) { setError(email, t.errEmail); invalid.push(email); }
+    else if (!EMAIL.test(email.value.trim())) { setError(email, t.errEmailFormat); invalid.push(email); }
+    if (!mensaje.value.trim()) { setError(mensaje, t.errMessage); invalid.push(mensaje); }
+    return invalid;
+  }
+
+  // Al corregir un campo, se quita su mensaje de error
+  form.addEventListener('input', function (e) {
+    var f = e.target;
+    if (f.getAttribute('aria-invalid') === 'true' && f.value.trim()) {
+      var err = document.getElementById(f.id + '-error');
+      if (err) { err.hidden = true; err.textContent = ''; }
+      f.removeAttribute('aria-invalid');
+      f.removeAttribute('aria-describedby');
+    }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (sending) return;
+    clearErrors();
+    status.hidden = true;
+    var invalid = validate();
+    if (invalid.length) { invalid[0].focus(); return; }
+
+    sending = true;
+    btn.setAttribute('aria-disabled', 'true');
+    var original = btnLabel.textContent;
+    btnLabel.textContent = t.sending;
+    var email = form.email.value.trim();
+
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+      .then(function (data) {
+        if (data && data.ok) {
+          form.reset();
+          showStatus(t.success.replace('{email}', email), 'ok');
+        } else if (data && data.errors) {
+          var fields = [];
+          Object.keys(data.errors).forEach(function (k) {
+            var f = form.elements[k];
+            if (f) { setError(f, data.errors[k]); fields.push(f); }
+          });
+          if (fields.length) fields[0].focus(); else showStatus(t.failure, 'error');
+        } else {
+          showStatus(t.failure, 'error');
+        }
+      })
+      .catch(function () { showStatus(t.failure, 'error'); })
+      .then(function () {
+        sending = false;
+        btn.removeAttribute('aria-disabled');
+        btnLabel.textContent = original;
+      });
+  });
+})();
+</script>

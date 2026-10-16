@@ -40,6 +40,28 @@ Reglas que valida el sitio al publicar:
 - Directorio de salida: `dist`
 - Variable de entorno: `NODE_VERSION` = `22.12.0`
 
+## Formulario de contacto
+
+El formulario envía a `/api/contacto`, una función de Cloudflare (`functions/api/contacto.js`)
+que manda el mensaje por correo con [Resend](https://resend.com). La respuesta va directo
+a la persona que escribió (campo "responder a").
+
+Variables en Cloudflare Pages → Settings → Variables and secrets (para Production):
+
+| Variable | Tipo | Valor |
+|---|---|---|
+| `RESEND_API_KEY` | Secreto | Clave de API de Resend |
+| `CONTACT_TO` | Texto | Correo donde llegan los mensajes |
+| `CONTACT_FROM` | Texto (opcional) | Remitente. Sin ella se usa `Accesa <onboarding@resend.dev>` |
+
+Mientras `accesa.agency` no esté verificado en Resend, el remitente de prueba
+(`onboarding@resend.dev`) solo puede enviar al correo con el que creaste la cuenta de Resend,
+así que `CONTACT_TO` debe ser ese correo. Cuando verifiques el dominio, agrega
+`CONTACT_FROM` = `Accesa <web@accesa.agency>` y puedes recibir en cualquier dirección.
+
+Protección contra spam: campo trampa invisible y rechazo de envíos desde otros sitios.
+Sin JavaScript, el formulario lleva a `/gracias/` o `/error-envio/` (y sus versiones en inglés).
+
 ## Trabajar en local (opcional)
 
 ```

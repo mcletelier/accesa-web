@@ -1,0 +1,31 @@
+---
+/** Página simple de aviso (confirmación o error del formulario). No se indexa en buscadores. */
+import Base from '../layouts/Base.astro';
+import BlogHeader from './BlogHeader.astro';
+import BlogFooter from './BlogFooter.astro';
+import '../styles/blog.css';
+
+interface Props {
+  lang: 'es' | 'en';
+  path: string;
+  title: string;
+  eyebrow: string;
+  heading: string;
+  linkText: string;
+  linkHref: string;
+}
+const { lang, path, title, eyebrow, heading, linkText, linkHref } = Astro.props;
+---
+<Base lang={lang} title={title} path={path}>
+<meta slot="head" name="robots" content="noindex">
+<BlogHeader lang={lang} />
+<main id="main-content">
+  <div class="b-hero">
+    <p class="b-eyebrow">{eyebrow}</p>
+    <h1 class="b-title">{heading}</h1>
+    <div class="b-intro"><slot /></div>
+  </div>
+  <p class="post-back"><a href={linkHref}>{linkText}</a></p>
+</main>
+<BlogFooter lang={lang} />
+</Base>

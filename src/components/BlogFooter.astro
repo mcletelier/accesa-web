@@ -1,8 +1,11 @@
 ---
-/** Pie de página del blog */
+/** Pie de página de páginas secundarias: blog y avisos */
+interface Props { lang?: 'es' | 'en' }
+const { lang = 'es' } = Astro.props;
+const es = lang === 'es';
 ---
 <footer class="b-footer">
-  <a href="/" class="b-footer-logo" aria-label="Accesa — inicio">
+  <a href={es ? '/' : '/en/'} class="b-footer-logo" aria-label={es ? 'Accesa — inicio' : 'Accesa — home'}>
     <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
       <circle cx="30" cy="30" r="26" fill="none" stroke="#C4522A" stroke-width="3"/>
       <path d="M20 42 L30 16 L40 42" fill="none" stroke="#FAF6EE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -10,10 +13,16 @@
     </svg>
     <span class="b-footer-wordmark">accesa</span>
   </a>
-  <ul class="b-footer-links" role="list" aria-label="Enlaces del pie de página">
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/rss.xml">RSS</a></li>
-    <li><a href="/accesibilidad/">Accesibilidad</a></li>
+  <ul class="b-footer-links" role="list" aria-label={es ? 'Enlaces del pie de página' : 'Footer links'}>
+    {es ? (
+      <>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/rss.xml">RSS</a></li>
+        <li><a href="/accesibilidad/">Accesibilidad</a></li>
+      </>
+    ) : (
+      <li><a href="/en/accessibility/">Accessibility</a></li>
+    )}
   </ul>
   <span class="b-footer-copy">© {new Date().getFullYear()} Accesa · Santiago, Chile</span>
 </footer>
