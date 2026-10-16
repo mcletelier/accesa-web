@@ -9,6 +9,7 @@ tags:
   - Sector público
   - Documentos accesibles
   - Ajustes necesarios
+image: /images/blog/compagnons-HE1zW44Zm_Y-unsplash.jpg
 draft: true
 ---
 ## Qué pasó
