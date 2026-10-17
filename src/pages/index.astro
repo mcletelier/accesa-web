@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm.astro';
 import Base from '../layouts/Base.astro';
 import '../styles/home-es.css';
 ---
-<Base lang="es" title="Accesa — Agencia de Accesibilidad" description="Accesa es una agencia chilena especializada en accesibilidad digital e inclusión. Auditorías WCAG 2.2, consultoría, diseño inclusivo y capacitación." path="/" alternates={{ es: '/', en: '/en/' }}>
+<Base lang="es" title="Accesa — Agencia de Accesibilidad" description="Accesa es una agencia chilena especializada en accesibilidad digital e inclusión. Auditorías WCAG 2.2, documentos accesibles, diseño inclusivo y capacitación." path="/" alternates={{ es: '/', en: '/en/' }}>
 <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
 <!-- Cursor -->
@@ -144,13 +144,14 @@ import '../styles/home-es.css';
       <div class="servicio-card reveal">
         <div class="servicio-num">02</div>
         <svg class="servicio-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-          <circle cx="20" cy="20" r="14" fill="none" stroke="#C4522A" stroke-width="1.5"/>
-          <circle cx="20" cy="14" r="3" fill="#C4522A"/>
-          <path d="M14 28 Q14 22 20 22 Q26 22 26 28" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M11 5 L25 5 L31 11 L31 35 L11 35 Z" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M25 5 L25 11 L31 11" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="17" cy="18" r="1.4" fill="#C4522A"/><circle cx="17" cy="23" r="1.4" fill="#C4522A"/><circle cx="21" cy="18" r="1.4" fill="#C4522A"/>
+          <path d="M16 29 L26 29" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <div class="servicio-title">Consultoría Estratégica</div>
-        <p class="servicio-desc">Acompañamos a tu equipo en el diseño e implementación de una estrategia de accesibilidad sostenible. Desde la política interna hasta la hoja de ruta técnica.</p>
-        <div class="servicio-tags"><span class="tag">Estrategia</span><span class="tag">Roadmap</span><span class="tag">Política</span></div>
+        <div class="servicio-title">Documentos Accesibles</div>
+        <p class="servicio-desc">Convertimos o creamos informes, actas, formularios y plantillas en Word y PDF que funcionan con lectores de pantalla, para que todas las personas puedan leerlos de forma autónoma.</p>
+        <div class="servicio-tags"><span class="tag">Word</span><span class="tag">PDF</span><span class="tag">Plantillas</span></div>
       </div>
       <div class="servicio-card reveal">
         <div class="servicio-num">03</div>
@@ -182,8 +183,8 @@ import '../styles/home-es.css';
           <path d="M6 30 L34 30" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <div class="servicio-title">Monitoreo Continuo</div>
-        <p class="servicio-desc">La accesibilidad no es una casilla — es un proceso. Ofrecemos seguimiento periódico para que tu plataforma mantenga sus estándares con cada actualización.</p>
-        <div class="servicio-tags"><span class="tag">Revisión periódica</span><span class="tag">Informe de avance</span><span class="tag">Auditor web</span></div>
+        <p class="servicio-desc">La accesibilidad no es una casilla — es un proceso. Como complemento de una auditoría o un proyecto, hacemos revisiones periódicas para que tu plataforma mantenga sus estándares con cada actualización.</p>
+        <div class="servicio-tags"><span class="tag">Complemento</span><span class="tag">Revisión periódica</span><span class="tag">Informe de avance</span></div>
       </div>
       <div class="servicio-card reveal">
         <div class="servicio-num">06</div>

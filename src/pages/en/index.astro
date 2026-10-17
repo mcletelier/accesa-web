@@ -3,7 +3,7 @@ import ContactForm from '../../components/ContactForm.astro';
 import Base from '../../layouts/Base.astro';
 import '../../styles/home-en.css';
 ---
-<Base lang="en" title="Accesa — Accessibility Agency" description="Accesa is a Chilean agency specialized in digital accessibility and inclusion. WCAG 2.2 audits, consulting, inclusive design and training." path="/en/" alternates={{ es: '/', en: '/en/' }}>
+<Base lang="en" title="Accesa — Accessibility Agency" description="Accesa is a Chilean agency specialized in digital accessibility and inclusion. WCAG 2.2 audits, accessible documents, inclusive design and training." path="/en/" alternates={{ es: '/', en: '/en/' }}>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Cursor -->
@@ -142,13 +142,14 @@ import '../../styles/home-en.css';
       <div class="servicio-card reveal">
         <div class="servicio-num">02</div>
         <svg class="servicio-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-          <circle cx="20" cy="20" r="14" fill="none" stroke="#C4522A" stroke-width="1.5"/>
-          <circle cx="20" cy="14" r="3" fill="#C4522A"/>
-          <path d="M14 28 Q14 22 20 22 Q26 22 26 28" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M11 5 L25 5 L31 11 L31 35 L11 35 Z" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M25 5 L25 11 L31 11" fill="none" stroke="#C4522A" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="17" cy="18" r="1.4" fill="#C4522A"/><circle cx="17" cy="23" r="1.4" fill="#C4522A"/><circle cx="21" cy="18" r="1.4" fill="#C4522A"/>
+          <path d="M16 29 L26 29" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <div class="servicio-title">Strategic Consulting</div>
-        <p class="servicio-desc">We guide your team in designing and implementing a sustainable accessibility strategy. From internal policy to technical roadmap.</p>
-        <div class="servicio-tags"><span class="tag">Strategy</span><span class="tag">Roadmap</span><span class="tag">Policy</span></div>
+        <div class="servicio-title">Accessible Documents</div>
+        <p class="servicio-desc">We convert or create reports, minutes, forms and templates in Word and PDF that work with screen readers, so everyone can read them independently.</p>
+        <div class="servicio-tags"><span class="tag">Word</span><span class="tag">PDF</span><span class="tag">Templates</span></div>
       </div>
       <div class="servicio-card reveal">
         <div class="servicio-num">03</div>
@@ -180,8 +181,8 @@ import '../../styles/home-en.css';
           <path d="M6 30 L34 30" stroke="#C4522A" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <div class="servicio-title">Continuous Monitoring</div>
-        <p class="servicio-desc">Accessibility is not a checkbox — it is a process. We offer periodic monitoring so your platform maintains its standards with every update.</p>
-        <div class="servicio-tags"><span class="tag">Periodic review</span><span class="tag">Progress report</span><span class="tag">Web auditor</span></div>
+        <p class="servicio-desc">Accessibility is not a checkbox — it is a process. As a complement to an audit or project, we carry out periodic reviews so your platform maintains its standards with every update.</p>
+        <div class="servicio-tags"><span class="tag">Add-on</span><span class="tag">Periodic review</span><span class="tag">Progress report</span></div>
       </div>
       <div class="servicio-card reveal">
         <div class="servicio-num">06</div>
