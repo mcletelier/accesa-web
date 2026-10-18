@@ -33,6 +33,33 @@ const clean = (v, max) => String(v ?? '').replace(/\r\n?/g, '\n').trim().slice(0
 const escapeHtml = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
+// Spam conocido: «Hola, quería saber su precio» en idiomas al azar. No incluye español ni inglés,
+// para no bloquear consultas reales de precio.
+const PRECIO_LATINO =
+  /(^|[^a-zà-ÿ])(pr[äa]is|preis|prijs|pris(en)?|prezzo|pre[çc]o|pre[țţ]ul|cijen[aeu]|hinta|kaina|fiyat|árat|verð|qiymət)(?![a-zà-ÿ])/i;
+const PRECIO_OTRAS_ESCRITURAS = /(цен|цін|баға|τιμ|מחיר|سعر|قیمت|價格|价格|価格|가격)/i;
+const esSpamDePrecio = (s) => PRECIO_LATINO.test(s) || PRECIO_OTRAS_ESCRITURAS.test(s);
+
+/** Devuelve el motivo si el envío parece de un robot; si no, null. */
+function esRobot(data, f) {
+  // 1) Campo trampa oculto lleno
+  if (clean(data.sitio_web, 200)) return 'campo trampa';
+
+  const fv = Number(data.fv);
+  const conJs = Number.isFinite(fv) && fv > 0;
+
+  // 2) Con JavaScript: nadie completa el formulario en menos de 2 segundos
+  if (conJs && fv < 2000) return `enviado en ${fv} ms`;
+
+  // 3) Sin la marca del navegador (los robots envían directo a /api/contacto):
+  //    se acepta solo si el mensaje no se parece al spam conocido
+  if (!conJs) {
+    if (esSpamDePrecio(f.mensaje)) return 'spam de precio en otro idioma';
+    if (f.mensaje.length < 25) return 'sin marca y mensaje muy corto';
+  }
+  return null;
+}
+
 function reply(request, lang, result, status = 200) {
   const wantsJson = (request.headers.get('accept') || '').includes('application/json');
   if (wantsJson) {
@@ -65,9 +92,6 @@ export async function onRequestPost({ request, env }) {
 
   const lang = data.lang === 'en' ? 'en' : 'es';
 
-  // Trampa para robots: si el campo oculto viene lleno, se responde como si todo saliera bien
-  if (clean(data.sitio_web, 200)) return reply(request, lang, { ok: true });
-
   const f = {
     nombre: clean(data.nombre, 120),
     organizacion: clean(data.organizacion, 160),
@@ -75,6 +99,13 @@ export async function onRequestPost({ request, env }) {
     servicio: clean(data.servicio, 120),
     mensaje: clean(data.mensaje, 5000),
   };
+
+  // Robots: se descarta en silencio y se responde como si todo saliera bien, para que no reintenten
+  const motivo = esRobot(data, f);
+  if (motivo) {
+    console.log('Envío descartado por anti-spam:', motivo, '|', f.email);
+    return reply(request, lang, { ok: true });
+  }
 
   const errors = {};
   if (!f.nombre) errors.nombre = MSG[lang].nombre;

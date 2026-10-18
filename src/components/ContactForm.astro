@@ -86,6 +86,9 @@ const t = {
     <label for="f-web">{t.honeypot}</label>
     <input id="f-web" name="sitio_web" type="text" tabindex="-1" autocomplete="off">
   </div>
+  <!-- Control anti-robots: el script anota cuánto tiempo pasó desde que se cargó la página -->
+  <input type="hidden" name="fv" value="">
+
 
   <button type="submit" class="form-submit"><span class="form-submit-label">{t.submit}</span> <span aria-hidden="true">&#8594;</span></button>
 
@@ -95,7 +98,12 @@ const t = {
 <script is:inline>
 (function () {
   var form = document.getElementById('contact-form');
-  if (!form || !window.fetch || !window.FormData) return;
+  if (!form) return;
+  // Anota los milisegundos desde que se cargó la página (los robots envían sin cargarla)
+  var start = Date.now();
+  function stamp() { if (form.fv) form.fv.value = String(Date.now() - start); }
+  form.addEventListener('submit', stamp);
+  if (!window.fetch || !window.FormData) return;
   // Con JavaScript, la validación la hace este script con mensajes accesibles; sin él, la hace el navegador
   form.noValidate = true;
   var t = JSON.parse(form.getAttribute('data-i18n'));
